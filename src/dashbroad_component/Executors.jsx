@@ -23,22 +23,7 @@ const styles = theme => ({
     margin: theme.spacing.unit,
   },
 })
-
-let id = 0
-function createData(name, calories, fat, carbs, protein) {
-  id += 1
-  return { id, name, calories, fat, carbs, protein }
-}
-
-const data = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-]
-
-class Projects extends React.Component {
+class Executors extends React.Component {
   render() {
     const { classes } = this.props
 
@@ -51,7 +36,7 @@ class Projects extends React.Component {
           noWrap
           className="component_name"
         >
-          Проекты
+          Исполнители
         </Typography>
         <Fab color="primary" aria-label="Add" className={classes.fab}>
           <AddIcon />
@@ -60,15 +45,14 @@ class Projects extends React.Component {
           <Table className={classes.table}>
             <TableHead>
               <TableRow>
-                <TableCell>Dessert (100g serving)</TableCell>
-                <TableCell align="right">Calories</TableCell>
-                <TableCell align="right">Fat (g)</TableCell>
-                <TableCell align="right">Carbs (g)</TableCell>
-                <TableCell align="right">Protein (g)</TableCell>
+                <TableCell>ФИО</TableCell>
+                <TableCell align="right">Специализация</TableCell>
+                <TableCell align="right">Стаж</TableCell>
+                <TableCell align="right">Компитенции</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
-              {data.map(n => (
+              {/* {data.map(n => (
                 <TableRow key={n.id}>
                   <TableCell component="th" scope="row">
                     {n.name}
@@ -78,7 +62,7 @@ class Projects extends React.Component {
                   <TableCell align="right">{n.carbs}</TableCell>
                   <TableCell align="right">{n.protein}</TableCell>
                 </TableRow>
-              ))}
+              ))} */}
             </TableBody>
           </Table>
         </Paper>
@@ -87,8 +71,8 @@ class Projects extends React.Component {
   }
 }
 
-Projects.propTypes = {
+Executors.propTypes = {
   classes: PropTypes.object.isRequired,
 }
 
-export default withStyles(styles)(Projects)
+export default withStyles(styles)(Executors)

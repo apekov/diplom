@@ -16,6 +16,9 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 
 import { MainListItems} from '../component_helpers/ListItems';
 import Projects from '../dashbroad_component/Projects'
+import Managers from '../dashbroad_component/Managers'
+import Executors from '../dashbroad_component/Executors'
+import Latest from '../dashbroad_component/Latest'
 
 const drawerWidth = 240;
 
@@ -119,9 +122,13 @@ class Dashboard extends React.Component {
     const {componentRender} = this.state;
     switch (componentRender) {
       case 'projects':
-        return <Projects/>; 
-      case 1:
-        return ;
+        return <Projects />; 
+      case 'manager':
+        return <Managers />;
+      case 'executor':
+        return <Executors />;
+      case 'latest':
+        return <Latest />;  
       default:
         throw new Error('Unknown step');
     }

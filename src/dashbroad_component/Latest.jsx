@@ -38,7 +38,7 @@ const data = [
   createData('Gingerbread', 356, 16.0, 49, 3.9),
 ]
 
-class Projects extends React.Component {
+class Latest extends React.Component {
   render() {
     const { classes } = this.props
 
@@ -51,7 +51,7 @@ class Projects extends React.Component {
           noWrap
           className="component_name"
         >
-          Проекты
+          Последние
         </Typography>
         <Fab color="primary" aria-label="Add" className={classes.fab}>
           <AddIcon />
@@ -87,8 +87,8 @@ class Projects extends React.Component {
   }
 }
 
-Projects.propTypes = {
+Latest.propTypes = {
   classes: PropTypes.object.isRequired,
 }
 
-export default withStyles(styles)(Projects)
+export default withStyles(styles)(Latest)
